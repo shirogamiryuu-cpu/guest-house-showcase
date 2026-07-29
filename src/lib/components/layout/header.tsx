@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { ChevronDown, Menu, X } from "lucide-react"
 import { navLinks } from "@/routes/navigation"
+import { AuthNav } from "./auth-nav"
+
 
 const YOUTHS_LOGO = "/Bwtnd.png"
 
@@ -156,20 +158,8 @@ export function Header() {
         </nav>
 
         {/* Auth Buttons */}
-        <div className="flex items-center gap-2.5">
-          <Link
-            href="/signup"
-            className="block rounded-[15px] bg-[#3343a5] px-5.5 py-2.5 text-center text-[16px] font-light leading-none text-white font-sans"
-          >
-            sign up
-          </Link>
-          <Link
-            href="/login"
-            className="block rounded-[15px] bg-[#3343a5] px-6.5 py-2.5 text-center text-[16px] font-light leading-none text-white font-sans"
-          >
-            log in
-          </Link>
-        </div>
+        <AuthNav />
+
       </div>
 
       {/* Mobile Menu */}
