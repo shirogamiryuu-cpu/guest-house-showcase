@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:dev": "next build",
-
+    "build:dev": "next build && rm -rf dist && cp -r .next dist",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest",
