@@ -47,8 +47,9 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-full flex-col bg-[#eef0ff] text-[#171717]">
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
+
     </html>
   );
 }
