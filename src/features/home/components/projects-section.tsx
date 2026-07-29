@@ -3,28 +3,31 @@
 import { useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { figmaImages } from "../utils/utils"
+import type { ProjectRow } from "@/features/content/types"
 
-export function ProjectsSection() {
+export function ProjectsSection({ projects }: { projects: ProjectRow[] }) {
   const [current, setCurrent] = useState(0)
-  const duplicated = [...figmaImages, ...figmaImages]
+  const count = projects.length
+  const duplicated = [...projects, ...projects]
 
   const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % figmaImages.length)
-  }, [])
+    setCurrent((prev) => (count ? (prev + 1) % count : 0))
+  }, [count])
 
   const prev = useCallback(() => {
-    setCurrent((prev) => (prev - 1 + figmaImages.length) % figmaImages.length)
-  }, [])
+    setCurrent((prev) => (count ? (prev - 1 + count) % count : 0))
+  }, [count])
 
   useEffect(() => {
+    if (!count) return
     const timer = setInterval(next, 4000)
     return () => clearInterval(timer)
-  }, [next])
+  }, [next, count])
+
+  if (!count) return null
 
   return (
     <section className="overflow-hidden bg-[#eef0ff] px-4 py-7.5 md:px-8 lg:pl-21.25">
-      {/* Title + Arrows */}
       <div className="mb-7.5 flex items-center justify-between pr-4 md:pr-8 lg:pr-21.25">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -36,7 +39,6 @@ export function ProjectsSection() {
           Projects Published
         </motion.h2>
 
-        {/* Nav Arrows */}
         <div className="flex items-center gap-3">
           <button
             onClick={prev}
@@ -55,7 +57,6 @@ export function ProjectsSection() {
         </div>
       </div>
 
-      {/* Carousel */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -67,32 +68,36 @@ export function ProjectsSection() {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * (100 / 1.5)}%)` }}
         >
-          {duplicated.map((src, i) => (
+          {duplicated.map((project, i) => (
             <div
-              key={i}
+              key={`${project.id}-${i}`}
               className="w-[66.666%] shrink-0 px-2 md:w-[50%] md:px-3 lg:w-[33.333%] lg:px-4 xl:w-[25%]"
             >
               <div className="relative aspect-4/3 overflow-hidden rounded-[15px] shadow-[0_4px_3.5px_rgba(19,22,38,1)]">
                 <img
-                  src={src}
-                  alt={`Project ${(i % figmaImages.length) + 1}`}
+                  src={project.image_url || "/Bwtnd.png"}
+                  alt={project.title}
                   className="absolute inset-0 size-full object-cover opacity-90"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/60 to-transparent p-3 md:p-5">
-                  <span className="font-sans text-sm font-extralight text-[#eef0ff] drop-shadow-[0_4px_3.5px_rgba(0,0,0,0.25)] md:text-xl">
-                    Register Now!
+                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent p-3 md:p-5">
+                  <span className="block font-sans text-sm font-medium text-[#eef0ff] md:text-lg">
+                    {project.title}
                   </span>
+                  {project.description && (
+                    <span className="block font-sans text-xs font-extralight text-[#eef0ff] md:text-sm">
+                      {project.description}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Dots */}
         <div className="mt-6 flex justify-center gap-2">
-          {figmaImages.map((_, i) => (
+          {projects.map((project, i) => (
             <button
-              key={i}
+              key={project.id}
               onClick={() => setCurrent(i)}
               aria-label={`Go to project ${i + 1}`}
               className={`size-2 rounded-full transition-all md:size-3 ${

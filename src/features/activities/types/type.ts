@@ -8,6 +8,7 @@ export interface UpcomingActivity {
   title: string
   imageSrc: string
   alt: string
+  registerUrl?: string
 }
 
 export interface PastActivitiesSectionProps {

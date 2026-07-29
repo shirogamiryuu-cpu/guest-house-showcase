@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inclusive_Sans, Inconsolata, Noto_Sans_Georgian } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { AuthProvider } from "@/features/auth/auth-provider";
 import "./globals.css";
+
 
 const inclusiveSans = Inclusive_Sans({
   subsets: ["latin"],
@@ -45,8 +47,9 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-full flex-col bg-[#eef0ff] text-[#171717]">
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
+
     </html>
   );
 }
