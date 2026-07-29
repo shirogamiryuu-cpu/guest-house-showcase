@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inclusive_Sans, Inconsolata, Noto_Sans_Georgian } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { AuthProvider } from "@/features/auth/auth-provider";
 import "./globals.css";
+
 
 const inclusiveSans = Inclusive_Sans({
   subsets: ["latin"],
