@@ -63,7 +63,7 @@ export default function AdminPage() {
             fields={[
               { name: "title", label: "Title" },
               { name: "description", label: "Description", type: "textarea" },
-              { name: "image_url", label: "Image URL" },
+              { name: "image_url", label: "Image", type: "image" },
               { name: "link_url", label: "Link URL" },
               { name: "sort_order", label: "Sort order", type: "number" },
               { name: "published", label: "Published", type: "boolean" },
@@ -78,7 +78,7 @@ export default function AdminPage() {
             fields={[
               { name: "title", label: "Title" },
               { name: "kind", label: "Kind (past/upcoming)" },
-              { name: "image_url", label: "Image URL" },
+              { name: "image_url", label: "Image", type: "image" },
               { name: "register_url", label: "Register URL" },
               { name: "sort_order", label: "Sort order", type: "number" },
             ]}
@@ -92,7 +92,7 @@ export default function AdminPage() {
             fields={[
               { name: "title", label: "Title" },
               { name: "description", label: "Description", type: "textarea" },
-              { name: "image_url", label: "Image URL" },
+              { name: "image_url", label: "Image", type: "image" },
               { name: "sort_order", label: "Sort order", type: "number" },
             ]}
           />
