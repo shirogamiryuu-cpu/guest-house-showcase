@@ -59,12 +59,18 @@ export default function AdminPage() {
           <ResourceEditor
             table="projects"
             title="Projects"
-            defaults={{ title: "", description: "", image_url: "", link_url: "", published: true, sort_order: 0 }}
+            defaults={{ title: "", description: "", image_url: "", link_url: "", credits: "", published: true, sort_order: 0 }}
             fields={[
               { name: "title", label: "Title" },
               { name: "description", label: "Description", type: "textarea" },
               { name: "image_url", label: "Image", type: "image" },
               { name: "link_url", label: "Link URL" },
+              {
+                name: "credits",
+                label: "Credits (names, comma separated)",
+                type: "textarea",
+                placeholder: "e.g. Aung Aung, May Thu, Kyaw Kyaw",
+              },
               { name: "sort_order", label: "Sort order", type: "number" },
               { name: "published", label: "Published", type: "boolean" },
             ]}
