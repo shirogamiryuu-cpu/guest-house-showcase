@@ -23,6 +23,7 @@ export function ProjectsGrid() {
                 id: index + 1,
                 image: project.image_url || "/Bwtnd.png",
                 title: project.title,
+                credits: project.credits ?? "",
               }}
             />
           </motion.div>
