@@ -110,6 +110,7 @@ export type Database = {
       projects: {
         Row: {
           created_at: string
+          credits: string
           description: string
           id: string
           image_url: string
@@ -121,6 +122,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          credits?: string
           description?: string
           id?: string
           image_url?: string
@@ -132,6 +134,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          credits?: string
           description?: string
           id?: string
           image_url?: string
