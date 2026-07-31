@@ -7,8 +7,9 @@ import { useAuth } from "@/features/auth/auth-provider"
 import { ResourceEditor } from "@/features/admin/components/resource-editor"
 import { SiteContentEditor } from "@/features/admin/components/site-content-editor"
 import { UsersManager } from "@/features/admin/components/users-manager"
+import { ContractsManager } from "@/features/contracts/components/contracts-manager"
 
-const TABS = ["Projects", "Activities", "Events", "Stats", "Content", "Users"] as const
+const TABS = ["Projects", "Activities", "Events", "Stats", "Content", "Contracts", "Users"] as const
 type Tab = (typeof TABS)[number]
 
 export default function AdminPage() {
