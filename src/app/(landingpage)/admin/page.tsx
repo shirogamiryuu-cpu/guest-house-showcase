@@ -117,6 +117,7 @@ export default function AdminPage() {
           />
         )}
         {tab === "Content" && <SiteContentEditor />}
+        {tab === "Contracts" && <ContractsManager />}
         {tab === "Users" && <UsersManager />}
       </div>
     </div>
