@@ -1,0 +1,1 @@
+REVOKE ALL ON FUNCTION public.guard_contract_update() FROM PUBLIC, anon, authenticated;

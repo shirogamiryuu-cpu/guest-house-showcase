@@ -47,6 +47,72 @@ export type Database = {
         }
         Relationships: []
       }
+      contracts: {
+        Row: {
+          admin_notes: string
+          amount: number
+          client_name: string
+          contact_email: string
+          created_at: string
+          currency: string
+          description: string
+          duration_months: number
+          end_date: string | null
+          id: string
+          maintenance_months: number
+          project_type: string
+          signed_at: string | null
+          signed_name: string | null
+          start_date: string | null
+          status: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          admin_notes?: string
+          amount?: number
+          client_name?: string
+          contact_email?: string
+          created_at?: string
+          currency?: string
+          description?: string
+          duration_months?: number
+          end_date?: string | null
+          id?: string
+          maintenance_months?: number
+          project_type?: string
+          signed_at?: string | null
+          signed_name?: string | null
+          start_date?: string | null
+          status?: string
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          admin_notes?: string
+          amount?: number
+          client_name?: string
+          contact_email?: string
+          created_at?: string
+          currency?: string
+          description?: string
+          duration_months?: number
+          end_date?: string | null
+          id?: string
+          maintenance_months?: number
+          project_type?: string
+          signed_at?: string | null
+          signed_name?: string | null
+          start_date?: string | null
+          status?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           created_at: string
