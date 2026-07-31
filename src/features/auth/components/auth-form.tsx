@@ -135,6 +135,27 @@ export function AuthForm({ mode }: AuthFormProps) {
             : "Log in to continue to YOUTHs."}
         </p>
 
+        <button
+          type="button"
+          onClick={handleGoogle}
+          disabled={googleBusy}
+          className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-[15px] border border-[#3343a5]/25 bg-white px-6 py-3 font-sans text-base font-medium text-[#131626] transition-colors hover:bg-[#eef0ff] disabled:opacity-60"
+        >
+          <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
+            <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.44a5.5 5.5 0 0 1-2.39 3.62v3h3.86c2.26-2.09 3.58-5.17 3.58-8.86Z" />
+            <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.94-2.91l-3.86-3c-1.08.72-2.45 1.16-4.08 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A12 12 0 0 0 12 24Z" />
+            <path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58V6.62H1.29a12 12 0 0 0 0 10.76l3.98-3.09Z" />
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75Z" />
+          </svg>
+          {googleBusy ? "Connecting…" : "Continue with Google"}
+        </button>
+
+        <div className="mt-5 flex items-center gap-3">
+          <span className="h-px flex-1 bg-[#3343a5]/15" />
+          <span className="font-sans text-xs uppercase tracking-wide text-[#3343a5]/70">or</span>
+          <span className="h-px flex-1 bg-[#3343a5]/15" />
+        </div>
+
         <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
           {isSignup && (
             <label className="flex flex-col gap-1.5">
