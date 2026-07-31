@@ -3,9 +3,15 @@
 import { createClient } from "@supabase/supabase-js"
 import type { Database } from "@/integrations/supabase/types"
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL as string
-const SUPABASE_PUBLISHABLE_KEY = process.env
-  .NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY as string
+// Publishable values are safe to ship; the fallbacks keep module evaluation
+// working during builds where env files are not present.
+const SUPABASE_URL =
+  (process.env.NEXT_PUBLIC_SUPABASE_URL as string) ||
+  "https://zvudlktmujurebdygmig.supabase.co"
+const SUPABASE_PUBLISHABLE_KEY =
+  (process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY as string) ||
+  "sb_publishable_99buRIwiWvasBDw5E4qRbg_M4iY9TsU"
+
 
 function isNewApiKey(value: string) {
   return value.startsWith("sb_publishable_") || value.startsWith("sb_secret_")
