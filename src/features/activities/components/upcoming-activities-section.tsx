@@ -5,7 +5,11 @@ import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { UpcomingActivitiesSectionProps } from "../types/type"
 
-export function UpcomingActivitiesSection({ activities }: UpcomingActivitiesSectionProps) {
+export function UpcomingActivitiesSection({
+  activities,
+  title = "Upcoming Activities",
+  registerLabel = "Register Now",
+}: UpcomingActivitiesSectionProps) {
   const [current, setCurrent] = useState(0)
   const duplicated = [...activities, ...activities]
 
@@ -33,7 +37,7 @@ export function UpcomingActivitiesSection({ activities }: UpcomingActivitiesSect
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full bg-linear-to-r from-[#3343a5] to-[#131a3f] bg-clip-text font-sans text-2xl font-medium leading-[1.2] text-transparent md:text-3xl lg:text-4xl"
         >
-          Upcoming Activities
+          {title}
         </motion.h2>
 
         {/* Nav Arrows */}
@@ -81,7 +85,7 @@ export function UpcomingActivitiesSection({ activities }: UpcomingActivitiesSect
                 <div className="absolute inset-0 bg-linear-to-br from-[#3343a5]/30 to-[#5a67d8]/20 opacity-80 transition-opacity group-hover:opacity-100" />
                 <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/60 to-transparent p-3 md:p-5">
                   <button className="rounded-[15px] bg-[#3343a5] px-4 py-2 font-mono text-xs font-light text-white transition-opacity hover:opacity-80 md:px-5.5 md:py-2.5 md:text-sm">
-                    Register Now
+                    {registerLabel}
                   </button>
                 </div>
               </div>

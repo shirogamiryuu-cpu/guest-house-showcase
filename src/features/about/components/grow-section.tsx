@@ -1,9 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { growSectionData, figmaImages } from "../utils/utils"
 
-export function GrowSection() {
+interface GrowSectionProps {
+  heading1: string
+  heading2: string
+  description: string
+  image: string
+}
+
+export function GrowSection({ heading1, heading2, description, image }: GrowSectionProps) {
   return (
     <section className="relative h-100 w-full overflow-hidden md:h-120">
       {/* Background image */}
@@ -15,7 +21,7 @@ export function GrowSection() {
         className="absolute inset-0 size-full overflow-hidden"
       >
         <img
-          src={figmaImages[1]}
+          src={image || "/Y6kHUB.png"}
           alt="Learn & Grow"
           className="absolute inset-0 size-full object-cover"
         />
@@ -31,13 +37,13 @@ export function GrowSection() {
         className="relative mx-auto flex h-full max-w-360 flex-col justify-center gap-2 px-5 md:px-8 lg:pl-16 lg:pr-0"
       >
         <h2 className="max-w-96 font-sans text-3xl font-extrabold leading-[1.2] text-white drop-shadow-sm sm:text-4xl md:text-5xl">
-          {growSectionData.heading1}
+          {heading1}
         </h2>
         <h2 className="max-w-96 font-sans text-3xl font-extrabold leading-[1.2] text-white drop-shadow-sm sm:text-4xl md:text-5xl">
-          {growSectionData.heading2}
+          {heading2}
         </h2>
         <p className="max-w-96 font-sans text-base font-light leading-relaxed text-white drop-shadow-sm md:text-lg">
-          {growSectionData.description}
+          {description}
         </p>
       </motion.div>
     </section>

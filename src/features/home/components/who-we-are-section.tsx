@@ -19,7 +19,15 @@ const gradients = [
   "from-[#3343a5] to-[#131a3f]",
 ]
 
-export function WhoWeAreSection({ features, events }: WhoWeAreSectionProps) {
+export function WhoWeAreSection({
+  features,
+  events,
+  eyebrow = "WHO WE ARE",
+  title = "Empowering Youths Through Actions",
+  description = "",
+  ctaLabel = "Learn More",
+  eventsTitle = "Upcoming Events",
+}: WhoWeAreSectionProps) {
   return (
     <section className="bg-white px-5 py-6 md:px-8 md:py-7.5 lg:px-21.25">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
@@ -35,15 +43,14 @@ export function WhoWeAreSection({ features, events }: WhoWeAreSectionProps) {
           >
             <div className="flex flex-col gap-1 md:gap-1.25">
               <span className="bg-linear-to-r from-[#00a5eb] to-[#3343a5] bg-clip-text font-sans text-base font-bold text-transparent md:text-lg">
-                WHO WE ARE
+                {eyebrow}
               </span>
               <h2 className="font-sans text-2xl font-medium leading-tight text-[#131626] md:text-3xl lg:text-4xl">
-                Empowering Youths Through Actions
+                {title}
               </h2>
             </div>
             <p className="max-w-lg font-sans text-base font-extralight leading-relaxed text-[#3343a5] md:text-lg lg:text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {description}
             </p>
           </motion.div>
 
@@ -81,7 +88,7 @@ export function WhoWeAreSection({ features, events }: WhoWeAreSectionProps) {
             href="/about"
             className="group inline-flex w-fit items-center gap-2 rounded-[10px] bg-linear-to-r from-[#131a3f] to-[#00a5eb] px-5 py-2.5 font-sans text-base font-semibold text-[#eef0ff] transition-opacity hover:opacity-90 md:gap-3 md:px-7.5 md:py-3.5 md:text-xl"
           >
-            Learn More
+            {ctaLabel}
             <ArrowRight className="size-5 transition-transform group-hover:translate-x-1 md:size-6" />
           </Link>
         </div>
@@ -95,7 +102,7 @@ export function WhoWeAreSection({ features, events }: WhoWeAreSectionProps) {
           className="flex w-full flex-col gap-4 rounded-[10px] bg-[#6e7ee0]/20 p-5 shadow-[0_5px_13.125px_rgba(0,0,0,0.25)] md:p-[23px_30px_48px] lg:w-87.5"
         >
           <h3 className="font-sans text-xl font-semibold text-[#131626] md:text-[25px]">
-            Upcoming Events
+            {eventsTitle}
           </h3>
           {events.map((event) => (
             <div

@@ -5,7 +5,13 @@ import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { ProjectRow } from "@/features/content/types"
 
-export function ProjectsSection({ projects }: { projects: ProjectRow[] }) {
+export function ProjectsSection({
+  projects,
+  title = "Projects Published",
+}: {
+  projects: ProjectRow[]
+  title?: string
+}) {
   const [current, setCurrent] = useState(0)
   const count = projects.length
   const duplicated = [...projects, ...projects]
@@ -36,7 +42,7 @@ export function ProjectsSection({ projects }: { projects: ProjectRow[] }) {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="font-sans text-2xl font-medium text-black md:text-3xl lg:text-4xl"
         >
-          Projects Published
+          {title}
         </motion.h2>
 
         <div className="flex items-center gap-3">

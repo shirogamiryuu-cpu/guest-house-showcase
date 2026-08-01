@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import type { UpcomingEventsSectionProps } from "../types/type"
 import { UpcomingEventCard } from "./upcoming-event-card"
 
-export function UpcomingEventsSection({ events }: UpcomingEventsSectionProps) {
+export function UpcomingEventsSection({ events, title = "Upcoming Events" }: UpcomingEventsSectionProps) {
   return (
     <section className="bg-white py-10 md:py-14 lg:py-20">
       <motion.div
@@ -15,7 +15,7 @@ export function UpcomingEventsSection({ events }: UpcomingEventsSectionProps) {
         className="mx-auto max-w-360 px-5 md:px-8 lg:px-25"
       >
         <h2 className="font-brand text-2xl font-semibold text-[#3343a5] md:text-[29px]">
-          Upcoming Events
+          {title}
         </h2>
       </motion.div>
 

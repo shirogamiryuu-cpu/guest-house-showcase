@@ -20,6 +20,7 @@ export interface UpcomingEventCardProps {
 
 export interface UpcomingEventsSectionProps {
   events: UpcomingEvent[]
+  title?: string
 }
 
 export interface EventsPageProps {

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import type { PastActivitiesSectionProps } from "../types/type"
 
-export function PastActivitiesSection({ activities }: PastActivitiesSectionProps) {
+export function PastActivitiesSection({ activities, title = "Past Activities" }: PastActivitiesSectionProps) {
   return (
     <section className="bg-linear-to-b from-[#131626] to-[#3343a5] px-4 py-7.5 md:px-8 lg:px-21.25">
       <motion.h2
@@ -13,7 +13,7 @@ export function PastActivitiesSection({ activities }: PastActivitiesSectionProps
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mb-7.5 font-sans text-2xl font-medium leading-[1.2] text-[#eef0ff] md:mb-15 md:text-3xl lg:text-4xl"
       >
-        Past Activities
+        {title}
       </motion.h2>
 
       <motion.div
