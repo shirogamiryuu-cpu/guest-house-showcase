@@ -1,9 +1,20 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { aboutUsText, figmaImages } from "../utils/utils"
 
-export function AboutHeroSection() {
+interface AboutHeroSectionProps {
+  heading: string
+  paragraph1: string
+  paragraph2: string
+  image: string
+}
+
+export function AboutHeroSection({
+  heading,
+  paragraph1,
+  paragraph2,
+  image,
+}: AboutHeroSectionProps) {
   return (
     <section className="mx-auto flex max-w-360 flex-col items-start gap-5 px-5 py-8 md:px-8 md:py-10 lg:flex-row lg:px-21.25">
       {/* Left — Text */}
@@ -14,13 +25,13 @@ export function AboutHeroSection() {
         className="flex flex-1 flex-col gap-4"
       >
         <h1 className="w-full bg-linear-to-r from-[#131a3f] to-[#3244a5] bg-clip-text font-sans text-3xl font-semibold leading-[1.2] text-transparent drop-shadow-sm sm:text-4xl md:text-5xl">
-          {aboutUsText.heading}
+          {heading}
         </h1>
         <p className="w-full font-sans text-base font-light leading-relaxed text-[#3343a5]">
-          {aboutUsText.paragraph1}
+          {paragraph1}
         </p>
         <p className="w-full font-sans text-lg font-light leading-relaxed text-[#3343a5]">
-          {aboutUsText.paragraph2}
+          {paragraph2}
         </p>
       </motion.div>
 
@@ -32,7 +43,7 @@ export function AboutHeroSection() {
         className="relative aspect-4/3 w-full shrink-0 overflow-hidden rounded-[15px] shadow-[0_4px_3.5px_#00000040] lg:h-80 lg:w-140 lg:aspect-auto"
       >
         <img
-          src={figmaImages[0]}
+          src={image || "/Bwtnd.png"}
           alt="About YOUTHs"
           className="absolute inset-0 size-full object-cover"
         />

@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { quoteWords } from "../utils/utils"
 
 const quoteVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -13,11 +12,11 @@ const quoteVariants = {
     }) as const,
 } as const
 
-export function MiddleQuoteSection() {
+export function MiddleQuoteSection({ words }: { words: string[] }) {
   return (
     <section className="bg-[#131a3f] px-5 py-5 md:px-8 lg:px-12.5">
       <div className="mx-auto flex max-w-360 flex-wrap items-center justify-center gap-3 md:gap-6">
-        {quoteWords.map((word, i) => (
+        {words.map((word, i) => (
           <motion.span
             key={word}
             custom={i}

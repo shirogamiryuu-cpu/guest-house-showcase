@@ -4,8 +4,12 @@ import { motion } from "framer-motion"
 import { UpcomingEventsSection } from "./upcoming-events-section"
 import { EventCard } from "./event-card"
 import { events, upcomingEvents } from "../utils/utils"
+import { useSiteContent } from "@/features/content/use-content"
+import { contentValue } from "@/features/content/content-schema"
 
 export function EventsPage() {
+  const { data: content } = useSiteContent()
+
   return (
     <div className="min-h-screen bg-white">
       <div className="mx-auto max-w-360 px-5 py-8 md:px-8 md:py-10 lg:px-25 lg:py-15">
@@ -23,7 +27,10 @@ export function EventsPage() {
           ))}
         </div>
       </div>
-      <UpcomingEventsSection events={upcomingEvents} />
+      <UpcomingEventsSection
+        events={upcomingEvents}
+        title={contentValue(content, "events_upcoming_title")}
+      />
     </div>
   )
 }
