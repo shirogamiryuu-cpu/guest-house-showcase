@@ -17,6 +17,11 @@ export interface UpcomingEvent {
 export interface WhoWeAreSectionProps {
   features: WhoWeAreFeature[]
   events: UpcomingEvent[]
+  eyebrow?: string
+  title?: string
+  description?: string
+  ctaLabel?: string
+  eventsTitle?: string
 }
 
 export interface StatCounterProps {
