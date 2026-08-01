@@ -13,8 +13,11 @@ export interface UpcomingActivity {
 
 export interface PastActivitiesSectionProps {
   activities: PastActivity[]
+  title?: string
 }
 
 export interface UpcomingActivitiesSectionProps {
   activities: UpcomingActivity[]
+  title?: string
+  registerLabel?: string
 }
