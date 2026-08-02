@@ -68,6 +68,10 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
 
   // Events
   events_upcoming_title: "Upcoming Events",
+
+  // Merchandise
+  merch_booths_title: "Upcoming Booths",
+  merch_see_more_label: "See more",
 }
 
 export const CONTENT_GROUPS: ContentGroup[] = [
