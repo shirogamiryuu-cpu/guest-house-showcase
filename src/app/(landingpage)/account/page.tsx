@@ -19,6 +19,7 @@ export default function AccountPage() {
   }, [loading, user, router])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFullName(profile?.full_name ?? "")
     setAvatarUrl(profile?.avatar_url ?? "")
   }, [profile])

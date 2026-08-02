@@ -10,7 +10,6 @@ export const navLinks: readonly NavLink[] = [
   { href: "/projects", label: "Projects" },
   { href: "/activities", label: "Activities" },
   { href: "/e-commerce", label: "E-Commerce" },
-  { href: "/contracts", label: "Contracts" },
 ]
 
 export const socialLinks = [

@@ -7,18 +7,18 @@ import { navLinks } from "@/routes/navigation"
 import { AuthNav } from "./auth-nav"
 
 
-const YOUTHS_LOGO = "/Bwtnd.png"
+const YOUTHS_LOGO = "/YOUTHs.png"
 
 const departmentItems = [
   { label: "Software", href: "/software" },
   { label: "Graphic", href: "/graphic" },
   { label: "Merchandise", href: "/merchandise" },
-  { label: "E-sports", href: "#" },
+  { label: "E-sports", href: "/esports" },
 ]
 
 const ecommerceItems = [
-  { label: "Products", href: "#" },
-  { label: "Contracts", href: "#" },
+  { label: "Products", href: "/products" },
+  { label: "Contracts", href: "/contracts" },
 ]
 
 type DropdownKey = "departments" | "ecommerce" | null

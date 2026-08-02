@@ -32,7 +32,9 @@ yarn-error.log*
 pencil-new.pen
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
+.env.*
+!.env.example
 
 # vercel
 .vercel

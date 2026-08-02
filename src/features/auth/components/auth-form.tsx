@@ -4,7 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabase/client"
-import { lovable } from "@/integrations/lovable"
 import { useAuth } from "../auth-provider"
 
 interface AuthFormProps {
@@ -25,37 +24,29 @@ export function AuthForm({ mode }: AuthFormProps) {
   const isSignup = mode === "signup"
 
   async function handleGoogle() {
-    setError(null)
-    setNotice(null)
-    setGoogleBusy(true)
-    try {
-      const result = await lovable.auth.signInWithOAuth("google", {
-        redirect_uri: window.location.origin,
-      })
-      if (result.error) {
-        setError(result.error.message || "Google sign-in failed.")
-        return
-      }
-      if (result.redirected) return
-      await refresh()
-      const { data: session } = await supabase.auth.getSession()
-      const userId = session.session?.user.id
-      let admin = false
-      if (userId) {
-        const { data: roles } = await supabase
-          .from("user_roles")
-          .select("role")
-          .eq("user_id", userId)
-        admin = Boolean(roles?.some((r) => r.role === "admin"))
-      }
-      router.push(admin ? "/admin" : "/home")
-      router.refresh()
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Google sign-in failed.")
-    } finally {
-      setGoogleBusy(false)
+  setError(null)
+  setNotice(null)
+  setGoogleBusy(true)
+
+  try {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    })
+
+    if (error) {
+      setError(error.message)
     }
+
+    // Supabase will redirect automatically if successful.
+  } catch (err) {
+    setError(err instanceof Error ? err.message : "Google sign-in failed.")
+  } finally {
+    setGoogleBusy(false)
   }
+}
 
 
   async function handleSubmit(e: React.FormEvent) {

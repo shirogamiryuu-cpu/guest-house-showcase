@@ -9,16 +9,16 @@ export const figmaImages = [
 
 export const leadCards: LeadCard[] = [
   {
-    title: "What will we do?",
+    title: "What Will We Do?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "The YOUTHs Graphic Design Department creates visual content that helps ideas, projects, and organizations communicate effectively. We work on branding, social media graphics, posters, promotional materials, illustrations, UI designs, and other creative projects while giving young designers opportunities to build practical skills and portfolios.",
     imageSide: "left",
     imageSrc: figmaImages[0],
   },
   {
-    title: "How will we do?",
+    title: "How Will We Do It?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "We turn ideas into strong visual designs through a collaborative creative process. We begin by understanding the purpose and audience, develop concepts and visual directions, create and refine designs, gather feedback, and deliver polished work ready for digital or print use. Members learn by working on real projects and collaborating with other departments.",
     imageSide: "right",
     imageSrc: figmaImages[1],
   },

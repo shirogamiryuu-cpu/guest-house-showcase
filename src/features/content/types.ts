@@ -1,5 +1,6 @@
 import type { Database } from "@/integrations/supabase/types"
 
+
 export type ProjectRow = Database["public"]["Tables"]["projects"]["Row"]
 export type ActivityRow = Database["public"]["Tables"]["activities"]["Row"]
 export type EventRow = Database["public"]["Tables"]["events"]["Row"]

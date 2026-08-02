@@ -15,10 +15,26 @@ export const stats: Stat[] = [
 ]
 
 export const whoWeAreFeatures: WhoWeAreFeature[] = [
-  { icon: "Globe", title: "Skill Development", description: "Access training programs to level up your skills" },
-  { icon: "Users", title: "Collaborative Projects", description: "Join forces with others to solve problems and create impact" },
-  { icon: "Award", title: "Leadership", description: "Lead initiatives and grow as future leaders" },
-  { icon: "Heart", title: "Community Impacts", description: "Contribute to change through meaningful actions" },
+  {
+    icon: "Globe",
+    title: "Skill Development",
+    description: "Build practical skills through training, workshops, and hands-on experiences",
+  },
+  {
+    icon: "Users",
+    title: "Collaboration",
+    description: "Connect with young people and work together on meaningful projects",
+  },
+  {
+    icon: "Award",
+    title: "Leadership",
+    description: "Take responsibility, lead initiatives, and grow as future leaders",
+  },
+  {
+    icon: "Heart",
+    title: "Community Impact",
+    description: "Turn your skills and ideas into actions that create positive change",
+  },
 ]
 
 export const upcomingEvents: UpcomingEvent[] = [

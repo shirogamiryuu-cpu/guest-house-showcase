@@ -68,10 +68,6 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
 
   // Events
   events_upcoming_title: "Upcoming Events",
-
-  // Merchandise
-  merch_booths_title: "Upcoming Booths",
-  merch_see_more_label: "See more",
 }
 
 export const CONTENT_GROUPS: ContentGroup[] = [
@@ -139,13 +135,6 @@ export const CONTENT_GROUPS: ContentGroup[] = [
   {
     title: "Events page",
     fields: [{ key: "events_upcoming_title", label: "Upcoming events heading" }],
-  },
-  {
-    title: "Merchandise page",
-    fields: [
-      { key: "merch_booths_title", label: "Upcoming booths heading" },
-      { key: "merch_see_more_label", label: "See more button label" },
-    ],
   },
 ]
 

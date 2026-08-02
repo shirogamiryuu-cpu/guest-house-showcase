@@ -14,7 +14,7 @@ export interface FieldDef {
 }
 
 interface ResourceEditorProps {
-  table: "projects" | "activities" | "events" | "site_stats" | "booths"
+  table: "projects" | "activities" | "events" | "site_stats"
   title: string
   fields: FieldDef[]
   orderBy?: string
@@ -50,6 +50,7 @@ export function ResourceEditor({
   }, [table, orderBy])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void load()
   }, [load])
 

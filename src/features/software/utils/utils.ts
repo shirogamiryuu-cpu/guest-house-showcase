@@ -9,16 +9,16 @@ export const figmaImages = [
 
 export const leadCards: LeadCard[] = [
   {
-    title: "What will we do?",
+    title: "What Will We Do?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "The YOUTHs Software Development Department builds practical digital solutions while giving young people opportunities to develop real-world technical skills. We work on websites, web applications, mobile applications, custom software, AI-powered solutions, and other technology projects that solve real problems.",
     imageSide: "left",
     imageSrc: figmaImages[0],
   },
   {
-    title: "How will we do?",
+    title: "How Will We Do It?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "We turn ideas into working solutions through a collaborative development process. We begin by understanding the problem, plan the solution, design the user experience, develop and test the product, then deploy and continuously improve it. Members work together across different roles while gaining hands-on experience.",
     imageSide: "right",
     imageSrc: figmaImages[1],
   },
