@@ -60,6 +60,17 @@ export function useEvents() {
   }, [])
 }
 
+export function useBooths() {
+  return useTable<BoothRow[]>(async () => {
+    const { data } = await supabase
+      .from("booths")
+      .select("*")
+      .eq("published", true)
+      .order("sort_order", { ascending: true })
+    return data ?? []
+  }, [])
+}
+
 export function useStats() {
   return useTable<StatRow[]>(async () => {
     const { data } = await supabase
