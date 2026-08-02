@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:dev": "next build && rm -rf dist && cp -r .next dist",
+    "build:dev": "next build && rm -rf dist && mkdir -p dist && tar -cf - --exclude=node_modules -C .next . | tar -xf - -C dist",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest",
