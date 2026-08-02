@@ -12,7 +12,7 @@ const YOUTHS_LOGO = "/Bwtnd.png"
 const departmentItems = [
   { label: "Software", href: "/software" },
   { label: "Graphic", href: "/graphic" },
-  { label: "Merchandise", href: "#" },
+  { label: "Merchandise", href: "/merchandise" },
   { label: "E-sports", href: "#" },
 ]
 

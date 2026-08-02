@@ -47,6 +47,54 @@ export type Database = {
         }
         Relationships: []
       }
+      booths: {
+        Row: {
+          available_hours: string
+          created_at: string
+          event_date: string
+          id: string
+          image_url: string
+          link_url: string
+          location_name: string
+          map_query: string
+          published: boolean
+          selling_items: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          available_hours?: string
+          created_at?: string
+          event_date?: string
+          id?: string
+          image_url?: string
+          link_url?: string
+          location_name?: string
+          map_query?: string
+          published?: boolean
+          selling_items?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Update: {
+          available_hours?: string
+          created_at?: string
+          event_date?: string
+          id?: string
+          image_url?: string
+          link_url?: string
+          location_name?: string
+          map_query?: string
+          published?: boolean
+          selling_items?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contracts: {
         Row: {
           admin_notes: string

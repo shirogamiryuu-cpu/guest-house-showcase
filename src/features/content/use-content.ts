@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase/client"
+import type { BoothRow } from "@/features/merchandise/types"
 import type {
   ActivityRow,
   EventRow,
@@ -55,6 +56,17 @@ export function useEvents() {
     const { data } = await supabase
       .from("events")
       .select("*")
+      .order("sort_order", { ascending: true })
+    return data ?? []
+  }, [])
+}
+
+export function useBooths() {
+  return useTable<BoothRow[]>(async () => {
+    const { data } = await supabase
+      .from("booths")
+      .select("*")
+      .eq("published", true)
       .order("sort_order", { ascending: true })
     return data ?? []
   }, [])
