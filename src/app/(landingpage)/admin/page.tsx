@@ -104,6 +104,44 @@ export default function AdminPage() {
             ]}
           />
         )}
+        {tab === "Booths" && (
+          <ResourceEditor
+            table="booths"
+            title="Merchandise booths"
+            defaults={{
+              title: "",
+              image_url: "",
+              event_date: "",
+              available_hours: "",
+              selling_items: "",
+              location_name: "",
+              map_query: "",
+              link_url: "",
+              sort_order: 0,
+              published: true,
+            }}
+            fields={[
+              { name: "title", label: "Title" },
+              { name: "image_url", label: "Image", type: "image" },
+              { name: "event_date", label: "Date", placeholder: "e.g. 08-05-2026" },
+              { name: "available_hours", label: "Available hours", placeholder: "e.g. 7:00 AM - 1:00 PM" },
+              {
+                name: "selling_items",
+                label: "Selling items",
+                type: "textarea",
+                placeholder: "e.g. T-Shirts, Hoodies, Stickers",
+              },
+              { name: "location_name", label: "Location name", placeholder: "e.g. University of Yangon" },
+              {
+                name: "map_query",
+                label: "Map location (address or lat,lng)",
+                placeholder: "e.g. University of Yangon, Yangon  ·  or  16.8409,96.1735",
+              },
+              { name: "sort_order", label: "Sort order", type: "number" },
+              { name: "published", label: "Published", type: "boolean" },
+            ]}
+          />
+        )}
         {tab === "Stats" && (
           <ResourceEditor
             table="site_stats"
