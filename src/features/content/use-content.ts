@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase/client"
+import type { BoothRow } from "@/features/merchandise/types"
 import type {
   ActivityRow,
   EventRow,
