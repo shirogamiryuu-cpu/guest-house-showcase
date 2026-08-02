@@ -140,6 +140,13 @@ export const CONTENT_GROUPS: ContentGroup[] = [
     title: "Events page",
     fields: [{ key: "events_upcoming_title", label: "Upcoming events heading" }],
   },
+  {
+    title: "Merchandise page",
+    fields: [
+      { key: "merch_booths_title", label: "Upcoming booths heading" },
+      { key: "merch_see_more_label", label: "See more button label" },
+    ],
+  },
 ]
 
 export function contentValue(map: Record<string, string>, key: string): string {
