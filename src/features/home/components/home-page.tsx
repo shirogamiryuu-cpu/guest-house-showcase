@@ -4,8 +4,8 @@ import { HeroSection } from "./hero-section"
 import { StatsBar } from "./stats-bar"
 import { WhoWeAreSection } from "./who-we-are-section"
 import { ProjectsSection } from "./projects-section"
-import { useEvents, useProjects, useSiteContent, useStats } from "@/features/content/use-content"
-import { contentValue } from "@/features/content/content-schema"
+import { useEvents, useProjects, useSiteContent, useStats } from "@/integrations/supabase/use-content"
+import { contentValue } from "@/integrations/supabase/content-schema"
 
 const FEATURE_ICONS = ["Globe", "Users", "Award", "Heart"]
 

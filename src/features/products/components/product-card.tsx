@@ -4,7 +4,7 @@ import type { ProductRow } from "@/integrations/supabase/content-types"
 
 export function ProductCard({ product }: { product: ProductRow }) {
   return (
-    <div className="flex w-full flex-col gap-2.5 rounded-[15px] bg-[#eef0ff]/90 p-2.5">
+    <div className="flex w-full flex-col gap-2.5 rounded-[15px] border border-[#3343a5]/15 bg-[#eef0ff]/90 p-2.5">
       <div className="relative aspect-4/3 w-full overflow-hidden rounded-[10px]">
         {product.image_url ? (
           <img
@@ -28,7 +28,7 @@ export function ProductCard({ product }: { product: ProductRow }) {
         </div>
         <Link
           href={`/products/${product.id}`}
-          className="flex items-center gap-1.5 rounded-[15px] bg-[#086d79]/40 px-3 py-2.5 font-serif text-base text-[#131a3f] transition-opacity hover:opacity-80"
+          className="flex items-center gap-1.5 rounded-[15px] bg-[#3343a5]/15 px-3 py-2.5 font-serif text-base text-[#131a3f] transition-opacity hover:opacity-80"
         >
           View Details
           <ArrowRight className="size-4" />

@@ -27,7 +27,7 @@ export function UpcomingActivitiesSection({
   }, [next])
 
   return (
-    <section className="overflow-hidden bg-[#eef0ff] px-4 py-7.5 md:px-8 lg:pl-21.25">
+    <section className="overflow-hidden bg-white px-4 py-7.5 md:px-8 lg:pl-21.25">
       {/* Title + Arrows */}
       <div className="mb-7.5 flex items-center justify-between pr-4 md:pr-8 lg:pr-21.25">
         <motion.h2
@@ -45,14 +45,14 @@ export function UpcomingActivitiesSection({
           <button
             onClick={prev}
             aria-label="Previous activity"
-            className="flex size-10 items-center justify-center rounded-full bg-white/80 text-[#131626] shadow transition-colors hover:bg-white md:size-12"
+            className="flex size-10 items-center justify-center rounded-full bg-[#eef0ff] text-[#3343a5] shadow transition-colors hover:bg-[#3343a5]/15 md:size-12"
           >
             <ChevronLeft className="size-5 md:size-6" />
           </button>
           <button
             onClick={next}
             aria-label="Next activity"
-            className="flex size-10 items-center justify-center rounded-full bg-white/80 text-[#131626] shadow transition-colors hover:bg-white md:size-12"
+            className="flex size-10 items-center justify-center rounded-full bg-[#eef0ff] text-[#3343a5] shadow transition-colors hover:bg-[#3343a5]/15 md:size-12"
           >
             <ChevronRight className="size-5 md:size-6" />
           </button>

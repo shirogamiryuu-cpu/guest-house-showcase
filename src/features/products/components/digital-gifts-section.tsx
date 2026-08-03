@@ -10,7 +10,7 @@ export function DigitalGiftsSection() {
   const { data: products } = useProducts()
 
   return (
-    <section className="bg-[#086d79] px-5 py-10 md:px-8 md:py-14 lg:px-21.25 lg:py-16">
+    <section className="bg-white px-5 py-10 md:px-8 md:py-14 lg:px-21.25 lg:py-16">
       <div className="mx-auto flex max-w-360 flex-col gap-10">
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between">
           <motion.div
@@ -20,13 +20,13 @@ export function DigitalGiftsSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-1 flex-col gap-4 text-center lg:text-left"
           >
-            <h2 className="font-serif text-3xl font-bold leading-[1.2] text-[#eef0ff] sm:text-4xl md:text-5xl">
+            <h2 className="font-serif text-3xl font-bold leading-[1.2] text-[#131a3f] sm:text-4xl md:text-5xl">
               Digital Gifts
             </h2>
-            <p className="font-serif text-xl italic text-[#eef0ff] md:text-2xl">
+            <p className="font-serif text-xl italic text-[#3343a5] md:text-2xl">
               For Your Loved Ones
             </p>
-            <p className="max-w-2xl text-justify font-serif text-base italic text-[#eef0ff] md:text-lg">
+            <p className="max-w-2xl text-justify font-serif text-base italic text-[#424243] md:text-lg">
               Your loved ones are important. Someone who&rsquo;s always by your
               side whatever you&rsquo;re going through. Surprise them with a
               warming gift of ours. Show them you care!

@@ -146,6 +146,45 @@ export type Database = {
         }
         Relationships: []
       }
+      merch_booths: {
+        Row: {
+          created_at: string
+          date_text: string
+          featured: boolean
+          hours_text: string
+          id: string
+          image_url: string
+          selling_items: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          date_text?: string
+          featured?: boolean
+          hours_text?: string
+          id?: string
+          image_url?: string
+          selling_items?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          date_text?: string
+          featured?: boolean
+          hours_text?: string
+          id?: string
+          image_url?: string
+          selling_items?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null

@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase/client"
 import type {
   ActivityRow,
   EventRow,
+  MerchBoothRow,
   ProductRow,
   ProjectRow,
   SiteContentMap,
@@ -83,6 +84,16 @@ export function useStats() {
   return useTable<StatRow[]>(async () => {
     const { data } = await supabase
       .from("site_stats")
+      .select("*")
+      .order("sort_order", { ascending: true })
+    return data ?? []
+  }, [])
+}
+
+export function useMerchBooths() {
+  return useTable<MerchBoothRow[]>(async () => {
+    const { data } = await supabase
+      .from("merch_booths")
       .select("*")
       .order("sort_order", { ascending: true })
     return data ?? []

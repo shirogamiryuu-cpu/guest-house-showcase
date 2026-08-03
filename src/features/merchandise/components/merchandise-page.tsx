@@ -4,8 +4,8 @@ import { MerchandiseHeroSection } from "./merchandise-hero-section"
 import { LeadsSection } from "./leads-section"
 import { UpcomingBoothsSection } from "./upcoming-booths-section"
 import { leadCards, booths as fallbackBooths } from "../utils/utils"
-import { useMerchBooths, useSiteContent } from "@/features/content/use-content"
-import { contentValue } from "@/features/content/content-schema"
+import { useMerchBooths, useSiteContent } from "@/integrations/supabase/use-content"
+import { contentValue } from "@/integrations/supabase/content-schema"
 
 export function MerchandisePage() {
   const { data: rows } = useMerchBooths()

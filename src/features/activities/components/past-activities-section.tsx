@@ -5,13 +5,13 @@ import type { PastActivitiesSectionProps } from "../types/type"
 
 export function PastActivitiesSection({ activities, title = "Past Activities" }: PastActivitiesSectionProps) {
   return (
-    <section className="bg-linear-to-b from-[#131626] to-[#3343a5] px-4 py-7.5 md:px-8 lg:px-21.25">
+    <section className="bg-white px-4 py-7.5 md:px-8 lg:px-21.25">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mb-7.5 font-sans text-2xl font-medium leading-[1.2] text-[#eef0ff] md:mb-15 md:text-3xl lg:text-4xl"
+        className="mb-7.5 font-sans text-2xl font-medium leading-[1.2] text-[#131a3f] md:mb-15 md:text-3xl lg:text-4xl"
       >
         {title}
       </motion.h2>

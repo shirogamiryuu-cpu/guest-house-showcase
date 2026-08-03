@@ -11,7 +11,7 @@ export function ActivitiesPage() {
   const { data: content } = useSiteContent()
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <PastActivitiesSection
         title={contentValue(content, "activities_past_title")}
         activities={past.map((a) => ({

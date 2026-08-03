@@ -3,7 +3,7 @@ import { DigitalGiftsSection } from "./digital-gifts-section"
 
 export function ProductsPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <ProductsHeroSection />
       <DigitalGiftsSection />
     </div>

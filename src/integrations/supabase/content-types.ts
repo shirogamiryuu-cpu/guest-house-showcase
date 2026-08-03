@@ -7,5 +7,6 @@ export type EventRow = Database["public"]["Tables"]["events"]["Row"]
 export type StatRow = Database["public"]["Tables"]["site_stats"]["Row"]
 export type SiteContentRow = Database["public"]["Tables"]["site_content"]["Row"]
 export type PendingSignupRow = Database["public"]["Tables"]["pending_signups"]["Row"]
+export type MerchBoothRow = Database["public"]["Tables"]["merch_booths"]["Row"]
 
 export type SiteContentMap = Record<string, string>
