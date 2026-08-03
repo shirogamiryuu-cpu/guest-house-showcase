@@ -3,8 +3,10 @@
 import { useCallback, useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase/client"
 import { ImageDropzone } from "./image-dropzone"
+import { GalleryDropzone } from "./gallery-dropzone"
 
-export type FieldType = "text" | "textarea" | "number" | "boolean" | "image"
+export type FieldType = "text" | "textarea" | "number" | "boolean" | "image" | "gallery"
+
 
 export interface FieldDef {
   name: string
