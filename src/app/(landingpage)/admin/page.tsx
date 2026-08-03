@@ -9,7 +9,7 @@ import { SiteContentEditor } from "@/features/admin/components/site-content-edit
 import { UsersManager } from "@/features/admin/components/users-manager"
 import { ContractsManager } from "@/features/contracts/components/contracts-manager"
 
-const TABS = ["Projects", "Activities", "Events", "Stats", "Content", "Contracts", "Users"] as const
+const TABS = ["Projects", "Products", "Activities", "Events", "Stats", "Content", "Contracts", "Users"] as const
 type Tab = (typeof TABS)[number]
 
 export default function AdminPage() {
@@ -72,6 +72,23 @@ export default function AdminPage() {
                 type: "textarea",
                 placeholder: "e.g. Aung Aung, May Thu, Kyaw Kyaw",
               },
+              { name: "sort_order", label: "Sort order", type: "number" },
+              { name: "published", label: "Published", type: "boolean" },
+            ]}
+          />
+        )}
+        {tab === "Products" && (
+          <ResourceEditor
+            table="products"
+            title="Products"
+            defaults={{ name: "", subtitle: "", description: "", price: 0, rating: 0, image_url: "", published: true, sort_order: 0 }}
+            fields={[
+              { name: "name", label: "Name" },
+              { name: "subtitle", label: "Subtitle" },
+              { name: "description", label: "Description", type: "textarea" },
+              { name: "price", label: "Price", type: "number" },
+              { name: "rating", label: "Rating", type: "number" },
+              { name: "image_url", label: "Image", type: "image" },
               { name: "sort_order", label: "Sort order", type: "number" },
               { name: "published", label: "Published", type: "boolean" },
             ]}

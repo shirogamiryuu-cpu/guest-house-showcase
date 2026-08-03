@@ -14,7 +14,7 @@ export interface FieldDef {
 }
 
 interface ResourceEditorProps {
-  table: "projects" | "activities" | "events" | "site_stats"
+  table: "projects" | "activities" | "events" | "site_stats" | "products"
   title: string
   fields: FieldDef[]
   orderBy?: string

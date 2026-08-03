@@ -2,8 +2,8 @@
 
 import { PastActivitiesSection } from "./past-activities-section"
 import { UpcomingActivitiesSection } from "./upcoming-activities-section"
-import { useActivities, useSiteContent } from "@/features/content/use-content"
-import { contentValue } from "@/features/content/content-schema"
+import { useActivities, useSiteContent } from "@/integrations/supabase/use-content"
+import { contentValue } from "@/integrations/supabase/content-schema"
 
 export function ActivitiesPage() {
   const { data: past } = useActivities("past")

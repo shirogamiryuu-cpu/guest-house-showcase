@@ -5,11 +5,11 @@ import { supabase } from "@/lib/supabase/client"
 import type {
   ActivityRow,
   EventRow,
+  ProductRow,
   ProjectRow,
   SiteContentMap,
   StatRow,
-  MerchBoothRow,
-} from "./types"
+} from "./content-types"
 
 function useTable<T>(load: () => Promise<T>, initial: T) {
   const [data, setData] = useState<T>(initial)
@@ -41,6 +41,23 @@ export function useProjects() {
       .order("sort_order", { ascending: true })
     return data ?? []
   }, [])
+}
+
+export function useProducts() {
+  return useTable<ProductRow[]>(async () => {
+    const { data } = await supabase
+      .from("products")
+      .select("*")
+      .order("sort_order", { ascending: true })
+    return data ?? []
+  }, [])
+}
+
+export function useProduct(id: string) {
+  return useTable<ProductRow | null>(async () => {
+    const { data } = await supabase.from("products").select("*").eq("id", id).maybeSingle()
+    return data ?? null
+  }, null)
 }
 
 export function useActivities(kind?: "past" | "upcoming") {
@@ -79,14 +96,4 @@ export function useSiteContent() {
     for (const row of data ?? []) map[row.key] = row.value
     return map
   }, {})
-}
-
-export function useMerchBooths() {
-  return useTable<MerchBoothRow[]>(async () => {
-    const { data } = await supabase
-      .from("merch_booths")
-      .select("*")
-      .order("sort_order", { ascending: true })
-    return data ?? []
-  }, [])
 }

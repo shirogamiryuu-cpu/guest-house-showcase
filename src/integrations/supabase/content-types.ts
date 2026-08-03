@@ -1,11 +1,11 @@
 import type { Database } from "@/integrations/supabase/types"
 
-
 export type ProjectRow = Database["public"]["Tables"]["projects"]["Row"]
+export type ProductRow = Database["public"]["Tables"]["products"]["Row"]
 export type ActivityRow = Database["public"]["Tables"]["activities"]["Row"]
 export type EventRow = Database["public"]["Tables"]["events"]["Row"]
 export type StatRow = Database["public"]["Tables"]["site_stats"]["Row"]
 export type SiteContentRow = Database["public"]["Tables"]["site_content"]["Row"]
+export type PendingSignupRow = Database["public"]["Tables"]["pending_signups"]["Row"]
 
 export type SiteContentMap = Record<string, string>
-export type MerchBoothRow = Database["public"]["Tables"]["merch_booths"]["Row"]

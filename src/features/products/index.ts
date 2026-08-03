@@ -1,2 +1,2 @@
 export { ProductsPage } from "./components/products-page"
-export type { Product } from "./types/type"
+export type { ProductRow as Product } from "@/integrations/supabase/content-types"

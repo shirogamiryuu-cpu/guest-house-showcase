@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 import type { UpcomingBoothsSectionProps } from "../types/type"
+import { MerchandiseMapSection } from "./merchandise-map-section"
 
-export function UpcomingBoothsSection({ booths, featured }: UpcomingBoothsSectionProps) {
+export function UpcomingBoothsSection({ booths, mapTitle, mapAddress, mapQuery }: UpcomingBoothsSectionProps) {
   return (
     <section className="px-5 py-10 md:px-8 md:py-14 lg:px-21.25 lg:py-20">
       <div className="mx-auto flex max-w-360 flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
@@ -45,26 +46,19 @@ export function UpcomingBoothsSection({ booths, featured }: UpcomingBoothsSectio
           </div>
         </motion.div>
 
-        {/* Right — Featured booth */}
+        {/* Right — Map */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          className="w-full shrink-0 overflow-hidden rounded-[15px] bg-[#131a3f] lg:w-135"
+          className="w-full shrink-0 lg:w-135"
         >
-          <div className="relative aspect-16/9">
-            <img
-              src={featured.imageSrc}
-              alt={featured.title}
-              className="absolute inset-0 size-full object-cover"
-            />
-          </div>
-          <div className="flex flex-col gap-2 p-6">
-            <p className="font-serif text-lg font-light text-white md:text-xl">{featured.date}</p>
-            <p className="font-serif text-lg font-light text-white md:text-xl">{featured.hours}</p>
-            <p className="font-serif text-lg font-light text-white md:text-xl">{featured.sellingItems}</p>
-          </div>
+          <MerchandiseMapSection
+            title={mapTitle}
+            address={mapAddress}
+            query={mapQuery}
+          />
         </motion.div>
       </div>
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useProjects } from "@/features/content/use-content"
+import { useProjects } from "@/integrations/supabase/use-content"
 import { ProjectCard } from "./project-card"
 
 export function ProjectsGrid() {

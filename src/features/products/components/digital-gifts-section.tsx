@@ -3,9 +3,12 @@
 import { motion } from "framer-motion"
 import { Search } from "lucide-react"
 import { ProductCard } from "./product-card"
-import { products, figmaImages } from "../utils/utils"
+import { figmaImages } from "../utils/utils"
+import { useProducts } from "@/integrations/supabase/use-content"
 
 export function DigitalGiftsSection() {
+  const { data: products } = useProducts()
+
   return (
     <section className="bg-[#086d79] px-5 py-10 md:px-8 md:py-14 lg:px-21.25 lg:py-16">
       <div className="mx-auto flex max-w-360 flex-col gap-10">
@@ -57,7 +60,7 @@ export function DigitalGiftsSection() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product, i) => (
             <motion.div
-              key={i}
+              key={product.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

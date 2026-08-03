@@ -4,8 +4,8 @@ import { AboutHeroSection } from "./about-hero-section"
 import { MiddleQuoteSection } from "./middle-quote-section"
 import { MissionVisionValues } from "./mission-vision-values"
 import { GrowSection } from "./grow-section"
-import { useSiteContent } from "@/features/content/use-content"
-import { contentList, contentValue } from "@/features/content/content-schema"
+import { useSiteContent } from "@/integrations/supabase/use-content"
+import { contentList, contentValue } from "@/integrations/supabase/content-schema"
 import type { MissionVisionData } from "../types/type"
 
 export function AboutPage() {

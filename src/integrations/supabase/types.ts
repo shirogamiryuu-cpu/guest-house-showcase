@@ -173,6 +173,33 @@ export type Database = {
         }
         Relationships: []
       }
+      pending_signups: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       projects: {
         Row: {
           created_at: string
@@ -208,6 +235,48 @@ export type Database = {
           published?: boolean
           sort_order?: number
           title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          image_url: string
+          name: string
+          price: number
+          published: boolean
+          rating: number
+          sort_order: number
+          subtitle: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          id?: string
+          image_url?: string
+          name: string
+          price?: number
+          published?: boolean
+          rating?: number
+          sort_order?: number
+          subtitle?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          image_url?: string
+          name?: string
+          price?: number
+          published?: boolean
+          rating?: number
+          sort_order?: number
+          subtitle?: string
           updated_at?: string
         }
         Relationships: []
@@ -280,6 +349,18 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      approve_pending_signup: {
+        Args: {
+          _pending_id: string
+        }
+        Returns: undefined
+      }
+      delete_user: {
+        Args: {
+          _user_id: string
+        }
+        Returns: undefined
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

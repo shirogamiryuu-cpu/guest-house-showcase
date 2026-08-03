@@ -68,12 +68,6 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
 
   // Events
   events_upcoming_title: "Upcoming Events",
-
-  // Merchandise
-  merch_booths_title: "Upcoming Booths",
-  merch_map_title: "Find Our Booth",
-  merch_map_address: "University of Information Technology, Yangon, Myanmar",
-  merch_map_query: "University of Information Technology, Yangon, Myanmar",
 }
 
 export const CONTENT_GROUPS: ContentGroup[] = [
@@ -142,21 +136,7 @@ export const CONTENT_GROUPS: ContentGroup[] = [
     title: "Events page",
     fields: [{ key: "events_upcoming_title", label: "Upcoming events heading" }],
   },
-  {
-    title: "Merchandise page",
-    fields: [
-      { key: "merch_booths_title", label: "Booths section heading" },
-      { key: "merch_map_title", label: "Map section heading" },
-      { key: "merch_map_address", label: "Address shown under the map", type: "textarea" },
-      {
-        key: "merch_map_query",
-        label: "Map location",
-        help: "A place name, full address, or 'latitude,longitude' — used for the Google Map",
-      },
-    ],
-  },
 ]
-
 
 export function contentValue(map: Record<string, string>, key: string): string {
   const v = map[key]

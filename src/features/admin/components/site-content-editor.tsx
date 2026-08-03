@@ -7,7 +7,7 @@ import {
   CONTENT_DEFAULTS,
   CONTENT_GROUPS,
   type ContentField,
-} from "@/features/content/content-schema"
+} from "@/integrations/supabase/content-schema"
 
 export function SiteContentEditor() {
   const [values, setValues] = useState<Record<string, string>>({})

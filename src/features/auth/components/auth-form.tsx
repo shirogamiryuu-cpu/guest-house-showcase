@@ -62,7 +62,7 @@ export function AuthForm({ mode }: AuthFormProps) {
     setBusy(true)
     try {
       if (isSignup) {
-        const { error: signUpError } = await supabase.auth.signUp({
+        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
           email: email.trim(),
           password,
           options: {
@@ -71,17 +71,35 @@ export function AuthForm({ mode }: AuthFormProps) {
           },
         })
         if (signUpError) throw signUpError
-      } else {
-        const { error: signInError } = await supabase.auth.signInWithPassword({
-          email: email.trim(),
-          password,
-        })
-        if (signInError) throw signInError
+        if (signUpData.session) await supabase.auth.signOut()
+        setNotice("Sign up successful! Please wait for admin to accept.")
+        setBusy(false)
+        return
+      }
+
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password,
+      })
+      if (signInError) throw signInError
+
+      const { data: session } = await supabase.auth.getSession()
+      const userId = session.session?.user.id
+      if (userId) {
+        const { data: profileRow } = await supabase
+          .from("profiles")
+          .select("id")
+          .eq("id", userId)
+          .maybeSingle()
+        if (!profileRow) {
+          await supabase.auth.signOut()
+          setError("Your account is still pending admin approval.")
+          setBusy(false)
+          return
+        }
       }
 
       await refresh()
-      const { data: session } = await supabase.auth.getSession()
-      const userId = session.session?.user.id
       let admin = false
       if (userId) {
         const { data: roles } = await supabase

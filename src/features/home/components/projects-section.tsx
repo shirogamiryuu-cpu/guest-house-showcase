@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import type { ProjectRow } from "@/features/content/types"
+import type { ProjectRow } from "@/integrations/supabase/content-types"
 
 export function ProjectsSection({
   projects,

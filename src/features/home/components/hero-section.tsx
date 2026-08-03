@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
-import type { SiteContentMap } from "@/features/content/types"
+import type { SiteContentMap } from "@/integrations/supabase/content-types"
 
 export function HeroSection({ content }: { content: SiteContentMap }) {
   const title = content.hero_title ?? "Building Today, Inspiring Tomorrow"

@@ -27,5 +27,7 @@ export interface FeaturedBooth extends Booth {
 
 export interface UpcomingBoothsSectionProps {
   booths: Booth[]
-  featured: FeaturedBooth
+  mapTitle: string
+  mapAddress: string
+  mapQuery: string
 }

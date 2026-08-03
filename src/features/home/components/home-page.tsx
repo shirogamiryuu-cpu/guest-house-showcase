@@ -21,10 +21,16 @@ export function HomePage() {
     description: contentValue(content, `home_feature${i + 1}_description`),
   }))
 
+  const statsWithCounts = stats.map((s) => {
+    if (s.label === "Projects") return { ...s, value: String(projects.length) }
+    if (s.label === "Events") return { ...s, value: String(events.length) }
+    return { value: s.value, label: s.label }
+  })
+
   return (
     <div className="min-h-screen bg-white">
       <HeroSection content={content} />
-      <StatsBar stats={stats.map((s) => ({ value: s.value, label: s.label }))} />
+      <StatsBar stats={statsWithCounts} />
       <WhoWeAreSection
         features={features}
         events={events.map((e) => ({ title: e.title, description: e.description }))}

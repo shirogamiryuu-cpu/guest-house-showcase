@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { UpcomingEventsSection } from "./upcoming-events-section"
 import { EventCard } from "./event-card"
 import { events, upcomingEvents } from "../utils/utils"
-import { useSiteContent } from "@/features/content/use-content"
-import { contentValue } from "@/features/content/content-schema"
+import { useSiteContent } from "@/integrations/supabase/use-content"
+import { contentValue } from "@/integrations/supabase/content-schema"
 
 export function EventsPage() {
   const { data: content } = useSiteContent()
