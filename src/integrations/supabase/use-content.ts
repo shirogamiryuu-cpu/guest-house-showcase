@@ -44,6 +44,15 @@ export function useProjects() {
   }, [])
 }
 
+export function useProject(id: string) {
+  return useTable<ProjectRow | null>(async () => {
+    const { data } = await supabase.from("projects").select("*").eq("id", id).maybeSingle()
+    return data ?? null
+  }, null)
+}
+
+
+
 export function useProducts() {
   return useTable<ProductRow[]>(async () => {
     const { data } = await supabase

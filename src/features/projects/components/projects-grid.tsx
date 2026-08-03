@@ -19,6 +19,7 @@ export function ProjectsGrid() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <ProjectCard
+              href={`/projects/${project.id}`}
               project={{
                 id: index + 1,
                 image: project.image_url || "/Bwtnd.png",
@@ -26,6 +27,7 @@ export function ProjectsGrid() {
                 credits: project.credits ?? "",
               }}
             />
+
           </motion.div>
         ))}
       </div>

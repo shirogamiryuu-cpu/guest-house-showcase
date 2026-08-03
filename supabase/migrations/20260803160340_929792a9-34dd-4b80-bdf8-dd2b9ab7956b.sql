@@ -1,0 +1,3 @@
+ALTER TABLE public.projects
+  ADD COLUMN IF NOT EXISTS detail text NOT NULL DEFAULT '',
+  ADD COLUMN IF NOT EXISTS gallery text[] NOT NULL DEFAULT '{}';

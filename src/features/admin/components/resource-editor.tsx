@@ -3,8 +3,10 @@
 import { useCallback, useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase/client"
 import { ImageDropzone } from "./image-dropzone"
+import { GalleryDropzone } from "./gallery-dropzone"
 
-export type FieldType = "text" | "textarea" | "number" | "boolean" | "image"
+export type FieldType = "text" | "textarea" | "number" | "boolean" | "image" | "gallery"
+
 
 export interface FieldDef {
   name: string
@@ -102,6 +104,16 @@ export function ResourceEditor({
         />
       )
     }
+    if (field.type === "gallery") {
+      return (
+        <GalleryDropzone
+          label={field.label}
+          value={Array.isArray(value) ? (value as string[]) : []}
+          onChange={(urls) => onChange(urls)}
+        />
+      )
+    }
+
     if (field.type === "boolean") {
       return (
         <label className="flex h-full items-center gap-3 rounded-[12px] border border-[#3343a5]/20 bg-white px-3 py-2.5 font-sans text-sm text-[#131626]">

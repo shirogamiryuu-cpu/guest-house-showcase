@@ -286,6 +286,8 @@ export type Database = {
           created_at: string
           credits: string
           description: string
+          detail: string
+          gallery: string[]
           id: string
           image_url: string
           link_url: string
@@ -298,6 +300,8 @@ export type Database = {
           created_at?: string
           credits?: string
           description?: string
+          detail?: string
+          gallery?: string[]
           id?: string
           image_url?: string
           link_url?: string
@@ -310,6 +314,8 @@ export type Database = {
           created_at?: string
           credits?: string
           description?: string
+          detail?: string
+          gallery?: string[]
           id?: string
           image_url?: string
           link_url?: string
