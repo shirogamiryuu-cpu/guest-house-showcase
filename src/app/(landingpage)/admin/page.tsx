@@ -87,19 +87,27 @@ export default function AdminPage() {
           <ResourceEditor
             table="products"
             title="Products"
-            defaults={{ name: "", subtitle: "", description: "", price: 0, rating: 0, image_url: "", published: true, sort_order: 0 }}
+            defaults={{ name: "", subtitle: "", description: "", detail: "", price: 0, rating: 0, image_url: "", gallery: [], telegram_url: "", published: true, sort_order: 0 }}
             fields={[
               { name: "name", label: "Name" },
               { name: "subtitle", label: "Subtitle" },
               { name: "description", label: "Description", type: "textarea" },
+              { name: "detail", label: "Detailed info (shown on the product page)", type: "textarea" },
               { name: "price", label: "Price", type: "number" },
               { name: "rating", label: "Rating", type: "number" },
-              { name: "image_url", label: "Image", type: "image" },
+              { name: "image_url", label: "Cover image", type: "image" },
+              { name: "gallery", label: "Gallery images", type: "gallery" },
+              {
+                name: "telegram_url",
+                label: "Telegram order link (optional)",
+                placeholder: "https://t.me/username — leave empty to use the site-wide link",
+              },
               { name: "sort_order", label: "Sort order", type: "number" },
               { name: "published", label: "Published", type: "boolean" },
             ]}
           />
         )}
+
         {tab === "Activities" && (
           <ResourceEditor
             table="activities"

@@ -216,6 +216,8 @@ export type Database = {
         Row: {
           created_at: string
           description: string
+          detail: string
+          gallery: string[]
           id: string
           image_url: string
           name: string
@@ -224,11 +226,14 @@ export type Database = {
           rating: number
           sort_order: number
           subtitle: string
+          telegram_url: string
           updated_at: string
         }
         Insert: {
           created_at?: string
           description?: string
+          detail?: string
+          gallery?: string[]
           id?: string
           image_url?: string
           name: string
@@ -237,11 +242,14 @@ export type Database = {
           rating?: number
           sort_order?: number
           subtitle?: string
+          telegram_url?: string
           updated_at?: string
         }
         Update: {
           created_at?: string
           description?: string
+          detail?: string
+          gallery?: string[]
           id?: string
           image_url?: string
           name?: string
@@ -250,6 +258,7 @@ export type Database = {
           rating?: number
           sort_order?: number
           subtitle?: string
+          telegram_url?: string
           updated_at?: string
         }
         Relationships: []
