@@ -159,6 +159,17 @@ export const CONTENT_GROUPS: ContentGroup[] = [
       },
     ],
   },
+  {
+    title: "Products page",
+    fields: [
+      {
+        key: "products_telegram_url",
+        label: "Telegram order link",
+        help: "Used by the Order Now button when a product has no own link (e.g. https://t.me/yourname)",
+      },
+      { key: "products_order_label", label: "Order button label" },
+    ],
+  },
 ]
 
 
