@@ -74,6 +74,10 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
   merch_map_title: "Find Our Booth",
   merch_map_address: "University of Information Technology, Yangon, Myanmar",
   merch_map_query: "University of Information Technology, Yangon, Myanmar",
+
+  // Products
+  products_telegram_url: "https://t.me/youthsmyanmar",
+  products_order_label: "Order Now",
 }
 
 export const CONTENT_GROUPS: ContentGroup[] = [
