@@ -6,10 +6,10 @@ import { motion } from "framer-motion"
 import type { SiteContentMap } from "@/integrations/supabase/content-types"
 
 export function HeroSection({ content }: { content: SiteContentMap }) {
-  const title = content.hero_title ?? "Building Today, Inspiring Tomorrow"
-  const subtitle = content.hero_subtitle ?? ""
-  const ctaLabel = content.hero_cta_label ?? "Register Now"
-  const image = content.hero_image_url ?? "/Bwtnd.png"
+  const title = content.hero_title || "Building Today, Inspiring Tomorrow"
+  const subtitle = content.hero_subtitle || ""
+  const ctaLabel = content.hero_cta_label || "Register Now"
+  const image = content.hero_image_url || "/Bwtnd.png"
 
   return (
     <section className="relative overflow-hidden bg-[#eef0ff]">

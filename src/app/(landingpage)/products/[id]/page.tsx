@@ -4,7 +4,8 @@ import { use } from "react"
 import Link from "next/link"
 import { ArrowLeft, Send, Star } from "lucide-react"
 import { useProduct, useSiteContent } from "@/integrations/supabase/use-content"
-import { contentValue } from "@/features/content/content-schema"
+import { contentValue } from "@/integrations/supabase/content-schema"
+import { ProductGallery } from "@/features/products/components/product-gallery"
 
 type ProductExtras = {
   detail?: string | null
@@ -34,6 +35,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
   const extras = product as unknown as ProductExtras
   const gallery = Array.isArray(extras.gallery) ? extras.gallery.filter(Boolean) : []
+  const images = [product.image_url, ...gallery].filter(Boolean)
   const detail = extras.detail ?? ""
   const orderUrl =
     (extras.telegram_url && extras.telegram_url.trim() !== "" ? extras.telegram_url : null) ??
@@ -48,12 +50,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
       </Link>
 
       <div className="flex flex-col gap-8 md:flex-row">
-        <div className="relative aspect-4/3 w-full overflow-hidden rounded-[15px] md:w-1/2">
-          <img
-            src={product.image_url}
-            alt={product.name}
-            className="absolute inset-0 size-full object-cover"
-          />
+        <div className="w-full md:w-1/2">
+          <ProductGallery images={images} name={product.name} />
         </div>
 
         <div className="flex flex-1 flex-col gap-4">
@@ -93,23 +91,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
           <p className="whitespace-pre-line font-sans text-base leading-relaxed text-[#424243]">
             {detail}
           </p>
-        </section>
-      )}
-
-      {gallery.length > 0 && (
-        <section className="flex flex-col gap-3">
-          <h2 className="font-serif text-2xl text-[#131a3f]">Gallery</h2>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-            {gallery.map((url, i) => (
-              <div key={url + i} className="relative aspect-square overflow-hidden rounded-[12px]">
-                <img
-                  src={url}
-                  alt={`${product.name} photo ${i + 1}`}
-                  className="absolute inset-0 size-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
         </section>
       )}
     </div>

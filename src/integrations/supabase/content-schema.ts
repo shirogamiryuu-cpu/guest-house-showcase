@@ -74,6 +74,10 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
   merch_map_title: "Find Our Booth",
   merch_map_address: "University of Information Technology, Yangon, Myanmar",
   merch_map_query: "University of Information Technology, Yangon, Myanmar",
+
+  // Products
+  products_telegram_url: "https://t.me/youthsmyanmar",
+  products_order_label: "Order Now",
 }
 
 export const CONTENT_GROUPS: ContentGroup[] = [
@@ -153,6 +157,17 @@ export const CONTENT_GROUPS: ContentGroup[] = [
         label: "Map location",
         help: "A place name, full address, or 'latitude,longitude' — used for the Google Map",
       },
+    ],
+  },
+  {
+    title: "Products page",
+    fields: [
+      {
+        key: "products_telegram_url",
+        label: "Telegram order link",
+        help: "Used by the Order Now button when a product has no own link (e.g. https://t.me/yourname)",
+      },
+      { key: "products_order_label", label: "Order button label" },
     ],
   },
 ]

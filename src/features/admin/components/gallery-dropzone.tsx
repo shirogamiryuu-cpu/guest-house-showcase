@@ -16,9 +16,17 @@ export function GalleryDropzone({ value, onChange, label = "Gallery" }: GalleryD
   const [error, setError] = useState<string | null>(null)
   const [manual, setManual] = useState("")
 
+  const MAX_IMAGES = 10
+
   const uploadMany = useCallback(
     async (files: File[]) => {
       if (files.length === 0) return
+      const remaining = MAX_IMAGES - value.length
+      if (remaining <= 0) {
+        setError(`Maximum ${MAX_IMAGES} images reached`)
+        return
+      }
+      files = files.slice(0, remaining)
       setError(null)
       setBusy(true)
       try {
@@ -88,7 +96,7 @@ export function GalleryDropzone({ value, onChange, label = "Gallery" }: GalleryD
           {busy ? "Uploading…" : dragging ? "Drop images here" : "Drag & drop images (multiple)"}
         </p>
         <p className="font-sans text-xs text-[#3343a5]/80">
-          or click to browse · PNG, JPG, WEBP, GIF · max 10MB each
+          or click to browse · PNG, JPG, WEBP, GIF · max 10MB each · {value.length}/{MAX_IMAGES} used
         </p>
       </div>
 
