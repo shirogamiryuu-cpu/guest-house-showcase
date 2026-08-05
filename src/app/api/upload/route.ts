@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     )
   }
 
-  // Only admins may upload.
+  // Any signed-in member may upload (admins for content, users for avatars).
   const authHeader = request.headers.get("authorization") ?? ""
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL as string,
@@ -37,11 +37,6 @@ export async function POST(request: Request) {
   )
   const { data: userData } = await supabase.auth.getUser()
   if (!userData?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  const { data: isAdmin } = await supabase.rpc("has_role", {
-    _user_id: userData.user.id,
-    _role: "admin",
-  })
-  if (!isAdmin) return NextResponse.json({ error: "Forbidden" }, { status: 403 })
 
   const form = await request.formData()
   const file = form.get("file")
