@@ -16,6 +16,13 @@ export interface Profile {
   email: string | null
   full_name: string | null
   avatar_url: string | null
+  phone: string | null
+  birthday: string | null
+  gender: string | null
+  bio: string | null
+  city: string | null
+  country: string | null
+  website: string | null
 }
 
 interface AuthContextValue {
